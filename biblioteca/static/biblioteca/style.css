@@ -1,0 +1,221 @@
+:root {
+    --purple-700: #5b21b6;
+    --purple-600: #6d28d9;
+    --purple-100: #ede9fe;
+    --purple-50:  #f5f3ff;
+
+    --green-600:  #059669;
+    --green-100:  #d1fae5;
+    --green-800:  #065f46;
+
+    --red-100:    #fee2e2;
+    --red-800:    #991b1b;
+    --amber-100:  #fef3c7;
+    --amber-800:  #92400e;
+
+    --bg:      #faf9fc;
+    --surface: #ffffff;
+    --text:    #1f1b2e;
+    --muted:   #6b6880;
+    --border:  #e8e4f0;
+
+    --radius: 12px;
+    --shadow: 0 1px 2px rgba(31, 27, 46, .06), 0 4px 16px rgba(109, 40, 217, .06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin: 0 0 1.5rem; }
+h2 { font-size: 1.25rem; letter-spacing: -0.01em; margin: 2.5rem 0 1rem; }
+
+a { color: var(--purple-600); text-decoration: none; }
+a:hover { color: var(--purple-700); text-decoration: underline; }
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: .9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.brand:hover { text-decoration: none; color: var(--purple-600); }
+.brand::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green-600);
+}
+
+nav { display: flex; gap: .25rem; }
+nav a {
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: .95rem;
+}
+nav a:hover {
+    background: var(--purple-50);
+    color: var(--purple-600);
+    text-decoration: none;
+}
+
+/* ---------- Conteúdo ---------- */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+}
+
+/* ---------- Mensagens ---------- */
+.msg {
+    padding: .85rem 1.1rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius);
+    border-left: 4px solid;
+    font-weight: 500;
+}
+.msg.success { background: var(--green-100); border-color: var(--green-600); color: var(--green-800); }
+.msg.error   { background: var(--red-100);   border-color: #dc2626;          color: var(--red-800); }
+.msg.warning { background: var(--amber-100); border-color: #d97706;          color: var(--amber-800); }
+.msg.info    { background: var(--purple-100); border-color: var(--purple-600); color: var(--purple-700); }
+
+/* ---------- Tabelas ---------- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+th {
+    background: var(--purple-50);
+    color: var(--purple-700);
+    font-size: .78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    text-align: left;
+    padding: .85rem 1rem;
+}
+
+td {
+    padding: .95rem 1rem;
+    border-top: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+tr:hover td { background: #fcfbff; }
+
+td[colspan] {
+    text-align: center;
+    color: var(--muted);
+    padding: 2.5rem 1rem;
+}
+
+/* ---------- Formulários e botões ---------- */
+form { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: 0; }
+
+select {
+    font: inherit;
+    font-size: .9rem;
+    padding: .5rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+}
+select:focus {
+    outline: 2px solid var(--purple-100);
+    border-color: var(--purple-600);
+}
+
+button {
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--purple-600);
+    color: #fff;
+    cursor: pointer;
+    transition: background .15s, transform .05s;
+}
+button:hover  { background: var(--purple-700); }
+button:active { transform: scale(.97); }
+
+/* ---------- Badges de situação ---------- */
+.badge {
+    display: inline-block;
+    padding: .2rem .7rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+.badge-ok       { background: var(--green-100);  color: var(--green-800); }
+.badge-late     { background: var(--red-100);    color: var(--red-800); }
+.badge-progress { background: var(--purple-100); color: var(--purple-700); }
+
+/* ---------- Lista de membros ---------- */
+.chips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+.chips a {
+    display: inline-block;
+    padding: .5rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-weight: 500;
+}
+.chips a:hover {
+    background: var(--purple-50);
+    border-color: var(--purple-600);
+    text-decoration: none;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 640px) {
+    h1 { font-size: 1.5rem; }
+    .container { padding-top: 1.25rem; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+}
