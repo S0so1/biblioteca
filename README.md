@@ -16,6 +16,11 @@ livros, membros e empréstimos com regras de negócio em Django.
 4. python manage.py createsuperuser
 5. python manage.py runserver
 ## Prints
-(inclua prints do Admin, da listagem de livros e dos empréstimos)
+<img width="495" height="157" alt="image" src="https://github.com/user-attachments/assets/03c9139f-9df8-4474-9d89-3e18bcce86d5" />
+<img width="1346" height="327" alt="image" src="https://github.com/user-attachments/assets/aa95a24f-8514-4ef7-b9d9-fcd0f74a0239" />
+<img width="1346" height="685" alt="image" src="https://github.com/user-attachments/assets/58234b6c-71de-4431-b93e-31a3287037dc" />
+
+
+
 ## Autor
 Sophia Silva Costa — IESB 2026
